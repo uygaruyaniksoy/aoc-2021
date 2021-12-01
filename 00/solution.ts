@@ -1,17 +1,20 @@
 #!/usr/bin/env -S deno run --allow-read 
-import {
-  always,
-} from "https://deno.land/x/ramda/mod.ts";
+import { compose, split } from "https://deno.land/x/ramda/mod.ts";
+
+const parseInts = compose(
+  parseInt,
+  split('\n'),
+)
 
 const input = await Deno.readTextFile('input.txt')
 const part1 = 
-  always(
-    undefined
+  compose(
+    parseInts,
   )
 
 const part2 =
-  always(
-    undefined
+  compose(
+    parseInts,
   )
 
 console.log(part1(input))
